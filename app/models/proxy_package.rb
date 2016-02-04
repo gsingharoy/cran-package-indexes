@@ -21,12 +21,12 @@ class ProxyPackage < ActiveRecord::Base
 
   private
 
+  # TODO: create a factory class for this
   def create_package_version
     Package.transaction do
       @package_version = PackageVersion.new(version: self.version,
         description: package_description['Description'],
-        date_of_publication: package_description['Date/Publication'].to_date
-        )
+        date_of_publication: package_description['Date/Publication'].to_date)
       @package_version.package = package
       @package_version.maintainers << package_maintainers
       @package_version.authors << package_authors

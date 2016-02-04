@@ -11,7 +11,7 @@ class Person < ActiveRecord::Base
     name = email.present? ? str.gsub("#{email}",'').strip : str.strip
     {
       name: name,
-      email: email ? email.gsub(/\<|\>/,'') : ''
+      email: email ? email.gsub(/\<|\>/,'') : nil
     }
   end
 end
