@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe PackageVersion, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe PackageVersion, type: :model do
+  it { should belong_to :package }
+  it { should have_many :authors }
+  it { should have_many :maintainers }
+  it { should have_db_index :package_id }
 end

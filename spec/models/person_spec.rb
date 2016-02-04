@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Person, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Person, type: :model do
+  it { should have_db_index :email }
+  it { should have_many :authors }
+  it { should have_many :maintainers }
 end
