@@ -22,6 +22,7 @@ module CranPackageIndexes
 
 
     config.autoload_paths += Dir[Rails.root.join('lib')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'services')]
 
 
     # Do not swallow errors in after_commit/after_rollback callbacks.

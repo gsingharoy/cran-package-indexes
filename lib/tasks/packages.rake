@@ -11,6 +11,7 @@ namespace :packages do
         #TODO: can be encapsulated in a Factory method for ProxyPackage
         proxy_package = ProxyPackage.create(name: package_hash['Package'],
           version: package_hash['Version'])
+        proxy_package.delay.sync!
         total += 1
       end
       puts "synced #{total} package(s)."
